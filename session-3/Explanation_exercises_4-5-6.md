@@ -28,6 +28,28 @@ Define the function `union(A, B)` which returns the union of two sets, validatin
   - `(union '(c a x) '(a (a)))` returns the union of the two sets, here shown as `(c x a (a))`.  
 - **Note:** The actual implementation of `union` is not shown here, but it must include both the logic for set union and argument validation using FOS (Funciones de Orden Superior).
 
+Result: 
+```scheme
+(displayln "\nEjercicio 4) union: ")
+
+;; Función auxiliar: diferencia de conjuntos
+(define (set-difference A B)
+  (filter (lambda (elem) (not (member elem B))) A))
+
+;; Función union: A U B = (A - B) ∪ B
+(define (union A B)
+  ;; Validación de argumentos: ambos deben ser listas (conjuntos)
+  (if (and (list? A) (list? B))
+      (append (set-difference A B) B)
+      (error "Error: Ambos argumentos deben ser conjuntos (listas).")))
+
+;; PRUEBAS DE FUNCIONAMIENTO:
+;; (union '(c a x) 3)       ;=> error
+;; (union '(c a x))         ;=> error
+(displayln (union '(c a x) '(a (a)))) ;=> (c x a (a))
+
+```
+
 ---
 
 ## Exercise 5: `subset?(A, B)`
