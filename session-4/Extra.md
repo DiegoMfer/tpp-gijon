@@ -1,4 +1,4 @@
-```markdown
+
 ## Exercise 7: Maximum Grade per Student
 
 **Description:**
@@ -63,4 +63,4 @@ Define a function `jugadoresConDobles` that, given the domino database `fichasJu
 (jugadoresConDobles fichasJugadores)  
 ; => '((Stark, Anthony Edward))
 ```
-```
+
