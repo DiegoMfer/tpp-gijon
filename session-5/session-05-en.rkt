@@ -170,6 +170,7 @@
 ;; ============================================================
 
 
+
 ;; ============================================================
 ;; Exercise 6:
 ;; Define the function buscar+(l-keys, datos)
@@ -182,11 +183,23 @@
 ;; ;=> ((LUIS GARCIA PEREZ) (MARIA LUZ DIVINA) (ADOLFO MONTES PELADOS) ...)
 ;; (buscar+ '(nombre sexo edad) Datos)
 ;; ;=> ((LUIS V 26) (MARIA M 23) (ADOLFO V 24) (ANA M 22) (JOSE V 36) ...)
+;;
+;; Tips:
+;; - `map`: Applies a function to each element of a list, returning a list of results.
+;; - `lambda`: Creates an anonymous function.
+;; - `apply`: Applies a function to a list of arguments.
+;; - `append`: Concatenates lists.
+;; - `curry`: Partially applies a function, fixing some arguments and returning a new function.
 ;; ============================================================
+
 ;(displayln "buscar+:")
 ;(buscar+ '(nombre apellidos) Datos)
 ;(buscar+ '(nombre sexo edad) Datos)
 
+
+;; ============================================================
+;;  Additional exercises
+;; ============================================================
 
 ;; ============================================================
 ;; Exercise 7:
