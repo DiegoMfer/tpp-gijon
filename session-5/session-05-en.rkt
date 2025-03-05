@@ -1,3 +1,6 @@
+; Scheme no tiene currificación de forma nativa
+; Función curry del módulo "racket/function"
+
 (require mzlib/compat racket/function)
 
 ;; -----------------------------------------------------------
