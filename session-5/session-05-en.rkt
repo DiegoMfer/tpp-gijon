@@ -77,25 +77,46 @@
 (binary-and '(1 1 0 0 1 0 1 0) '(0 1 0 1 1 0 1 1))
 
 
+
 ;; ============================================================
 ;; Exercise 2:
-;; Define the function maxLength(l1, l2, l3, ...)
-;; which returns the greatest length of the lists provided as arguments.
+;; Define the function maxLength which returns the greatest length
+;; among the lists provided as arguments.
+;;
 ;; Example:
 ;; (maxLength '(a (b c)) '(1 2 3 4) '((a b) (c d) e (f) g)) ;=> 5
+;;
+;; Tips:
+;; - Use 'length' to calculate the length of each list.
+;; - Use 'map' to apply 'length' to each list in the list of arguments.
+;; - Use 'apply' along with 'max' to get the maximum value of the lengths.
 ;; ============================================================
+
 ;(display "maxLength: ")
 ;(maxLength '(a (b c)) '(1 2 3 4) '((a b) (c d) e (f) g)) ;=> 5
 
 
 ;; ============================================================
 ;; Exercise 3:
-;; Define the function filtrar-for(f, l1, l2, ...)
-;; which returns the list: (filter(f, l1) filter(f, l2) ...)
+;; Define the function filter-for that takes a predicate 'f' and
+;; a series of lists (l1, l2, ...) and returns a list formed
+;; by the results of applying (filter f) to each of them.
+;;
 ;; Examples:
 ;; (filter-for atom? '(1 (2) 3) '(9 (2 3)) '(0 1 6))      ; => ((1 3) (9) (0 1 6))
 ;; (filter-for number? '(a (b) 3) '(d (2 e)) '(a 1 (b)))  ; => ((3) () (1))
+;;
+;; Tips:
+;; - Use the 'filter' function to extract from each list the elements
+;;   that satisfy the predicate 'f'.
+;; - Use 'curry' to create a partial function that applies 'filter'
+;;   with the predicate 'f' to each list.
+;; - Use 'map' to apply this function to each of the received lists.
+;; - The notation '. rest' in the definition allows the function to accept
+;;   a variable number of lists as arguments.
 ;; ============================================================
+
+
 ;(displayln "filter:")
 ;(filter-for atom? '(1 (2) 3) '(9 (2 3)) '(0 1 6))
 ;(filter-for number? '(a (b) 3) '(d (2 e)) '(a 1 (b)))
@@ -124,9 +145,14 @@
 ;; which returns a list with the value associated with the key for a given person p.
 ;; Example:
 ;; (info 'apellidos (cadr Datos))  ; => (LUZ DIVINA)
+;;
+;; Tips:
+;; - Use the 'filter' function to find the pair in the list 'p' where the car is equal to 'key'.
+;; - Use 'lambda' to create an anonymous function that checks if the car of a pair is equal to 'key'.
+;; - Use 'cdar' to extract the value associated with the key from the filtered result.
+;; - Alternatively, you can use 'compose' and 'curry' to achieve the same result in a more functional style.
 ;; ============================================================
-;(display "info: ")
-;(info 'apellidos (cadr Datos))  ; => (LUZ DIVINA)
+
 
 
 ;; ============================================================
@@ -136,9 +162,12 @@
 ;; Example:
 ;; (buscar 'nombre Datos)
 ;; ;=> ((LUIS) (MARIA) (ADOLFO) (ANA) (JOSE LUIS) (JOSHUA) (MARUJA) (GUILLERMO))
+;;
+;; Tips:
+;; - Use the 'map' function to apply a function to each element in the list 'datos'.
+;; - Define a helper function 'info' that retrieves the value associated with the key for a given person.
+;; - Use 'curry' to partially apply the 'info' function with the given key.
 ;; ============================================================
-;(display "buscar: ")
-;(buscar 'nombre Datos)
 
 
 ;; ============================================================
